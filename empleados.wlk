@@ -27,17 +27,32 @@
 object baigorria {
    
     const  precioPorEmp = 15 
+    var cantDeEmpVendidas = 0
 
-   // method sueldo() = (self.cantDeEmpVendidas() * precioPorEmp) 
+    method sueldo() = (cantDeEmpVendidas * precioPorEmp) 
 
-   // method vender(cantidad) {} 
-   
+    method cantDeEmpVendidas() = cantDeEmpVendidas
+
+    method vender(cantidad) {
+        cantDeEmpVendidas += cantidad
+    }
 }
 
 object galvan {
   
     const sueldoFijo = 15000
 
-
-    method sueldoFijo() = sueldoFijo  
+    method sueldo() = sueldoFijo  
 }
+
+object gimenez {
+    var fondos = 300000
+
+    method fondosTotales() = fondos
+
+    method pagarA(empleado) {
+      fondos = fondos - empleado.sueldo() 
+    }  
+  
+}
+
